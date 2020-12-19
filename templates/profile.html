@@ -1,0 +1,205 @@
+
+	<!DOCTYPE html>
+<html>
+<head>
+
+        <link rel="icon" href="https://media.discordapp.net/attachments/758726391495000104/779145290347184148/97d72f9647dbe3ed61c585d7ce9947bf.png">
+<title>Donut</title>
+
+<meta property="og:type" content="website">
+<meta name="author" content="An advanced, multi-purpose, all-in-one, modern Discord bot!">
+<meta name="theme-color" content="#ff4085">
+<meta property="og:title" content="Donut" />
+<meta property="og:description" content="An advanced, multi-purpose, all-in-one, modern Discord bot!" />
+<meta property="og:image" content="https://media.discordapp.net/attachments/758726391495000104/779145290347184148/97d72f9647dbe3ed61c585d7ce9947bf.png" />
+    
+<style>
+{style}
+</style>
+
+
+</head>
+<body>
+
+
+
+<div style='border-bottom: 3px solid white;' class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+            <a style='color: white; text-decoration: none;' href='/'>
+      <b>Donut</b>
+<img width=30; src='https://media.discordapp.net/attachments/758726391495000104/779145290347184148/97d72f9647dbe3ed61c585d7ce9947bf.png' style='position: absolute; margin-left:10px'></img>
+</a>
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+     <a href="/">Home</a>
+     <a style='background-color:white;'  href="/dashboard">Dashboard</a>
+     <a href="/levels">Levels</a>
+     <a href="/commands">Commands</a>
+     <a href="/staff">Staff</a>
+     <a href="/about">About</a>
+ 
+  </div>
+</div>
+
+
+<div id="success" style="position: fixed; display: none; background-color: green; margin: 20px; width: 140px; height: 60px; border-radius: 10px; text-align: center; bottom: 0px; right: 0px;">
+
+<p style="font-size:20px"><b>Success! ✔</b></p>
+
+        </div>
+
+<div class='header'>
+	
+<br>
+<p style='font-family:sans-serif; font-size: 40px'>
+<img width=200 style='border-radius:50%;float:left; margin-right:50px;' src='{userAv}'></img> <a href='/'><button class='button' style='float:right; margin-right: 10px;'>Logout</button></a>
+<a href='https://discord.com/api/oauth2/authorize?client_id=776729260647907379&redirect_uri=https%3A%2F%2Fdonut.js.org%2Fload&response_type=token&scope=identify%20guilds'><button class='button' style="float:right; margin-right: 20px">Switch Account</button></a><b>{userusername}#{userdiscriminator}</b></p>
+
+<p style='font-family:sans-serif;'><u>Region:</u>{userlocale}<br><u>User ID:</u>{userid}</p>
+<br><br>
+</div>
+<div class='grid1'>
+        	 <button style='background: #ff4085;' name='btnlist' id='btnservers' class='click' onclick="show('servers', 'btnservers')">Servers</button>
+<button name='btnlist' id='btnlevel' class='click' onclick="show('level', 'btnlevel')">Level Card Editor</button>
+
+
+
+<div name='lists' id='servers' style='display:block'><!--
+        <center>
+                
+                <h4>Adjust Grid View:</h4>
+<input min="1" max="800" type="range" oninput="editsize(this.value)">  
+</center>
+-->
+    <div class="grid-container" id='myDIV'>
+
+{guildList}
+{noPerms}
+{noDonut}  
+
+	</div>
+</div>
+
+<div name='lists' id='level' style='display:none'>
+
+	    <p style='margin-left:20px'>Background Color:<span><input style='margin-left:20px' value='#{bgcolor}' type="color" name="color" id = "bg" oninput="bgcolor()" ></span></p>
+		<p style='margin-left:20px'>XP Color:<span><input style='margin-left:20px' value='#{xpcolor}' type="color" name="color" id = "xp" oninput="xpcolor()" ></span></p>
+		<p style='margin-left:20px'>Background Image URL:<span><input style='margin-left:20px' type="text" name="color" id = "image" oninput="image()" ></span></p>
+        <button class='button' style='margin-left:10px;' onclick='setCard()'>Set Settings</button> 
+<br>
+<h1 style='margin-left:10px'>Level Card Preview:</h1>
+<center>
+<img id='levelcard' src="https://vacefron.nl/api/rankcard?username={levelTag}&avatar={userAv}&level={level}&rank=&currentxp={thisLevelXp}&nextlevelxp=1000&previouslevelxp=0&custombg={bgcolor}&xpcolor={xpcolor}&isboosting=false">
+</center>
+<p style='margin-left:30px'>This level is based off how much you use Donut, you can see a leaderboard with all levels at <a href='/levels'>Donut.js.org/levels</a> or try ?level in your server.</p>
+</div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#23272a" fill-opacity="1" d="M0,64L18.5,80C36.9,96,74,128,111,122.7C147.7,117,185,75,222,74.7C258.5,75,295,117,332,154.7C369.2,192,406,224,443,229.3C480,235,517,213,554,213.3C590.8,213,628,235,665,240C701.5,245,738,235,775,234.7C812.3,235,849,245,886,224C923.1,203,960,149,997,112C1033.8,75,1071,53,1108,58.7C1144.6,64,1182,96,1218,138.7C1255.4,181,1292,235,1329,256C1366.2,277,1403,267,1422,261.3L1440,256L1440,320L1421.5,320C1403.1,320,1366,320,1329,320C1292.3,320,1255,320,1218,320C1181.5,320,1145,320,1108,320C1070.8,320,1034,320,997,320C960,320,923,320,886,320C849.2,320,812,320,775,320C738.5,320,702,320,665,320C627.7,320,591,320,554,320C516.9,320,480,320,443,320C406.2,320,369,320,332,320C295.4,320,258,320,222,320C184.6,320,148,320,111,320C73.8,320,37,320,18,320L0,320Z"></path></svg>
+
+  </body>
+</html>
+<script>
+
+async function editsize(amount) {bs}
+let value = 0
+let timesRan = 0
+let increase = 1
+trigger()
+async function trigger() {bs}
+        if(timesRan > amount) {bs}
+                set()
+        {bl} else{bs}
+                addValue()
+        {bl}
+{bl}
+async function addValue() {bs}
+timesRan += 1
+value += increase
+if(amount < 231) {bs}
+//console.log(value)
+trigger()
+{bl}
+async function set() {bs}
+document.getElementById("myDIV").style.gridTemplateColumns = `repeat(auto-fit, minmax(${bs}value{bl}px, 1fr))`;
+console.log(document.getElementById("myDIV").style)
+{bl}
+{bl}
+
+// end of cusom grid
+
+async function setCard() {bs}
+	let bgcolor = document.getElementById("bg").value.replace('#', '')
+	let xpcolor = document.getElementById("xp").value.replace('#', '')
+    let image = document.getElementById('image').value
+    let bg = null
+    if(image.length < 1) {bs}
+    bg = bgcolor
+    {bl} else {bs}
+    bg = image
+    {bl}
+	fetch(`/profile?token={token}&name=cardXp&value=${bs}xpcolor{bl}`)
+    fetch(`/profile?token={token}&name=cardBg&value=${bs}bg{bl}`)
+ document.getElementById("success").style.display = "block";
+setTimeout(function(){bs}document.getElementById("success").style.display = "none"; {bl}, 1000);
+
+{bl}
+
+	async function bgcolor() {bs}
+	let bgcolor = document.getElementById("bg").value.replace('#', '')
+	let xpcolor = document.getElementById("xp").value.replace('#', '')
+document.getElementById('levelcard').src = `https://vacefron.nl/api/rankcard?username={levelTag}&avatar={userAv}&level={level}&rank=&currentxp={thisLevelXp}&nextlevelxp=1000&previouslevelxp=0&custombg=${bs}bgcolor{bl}&xpcolor=${bs}xpcolor{bl}&isboosting=false`
+	{bl}
+    
+    	async function image() {bs}
+	let bgcolor = document.getElementById("bg").value.replace('#', '')
+	let xpcolor = document.getElementById("xp").value.replace('#', '')
+    let image = document.getElementById("image").value
+document.getElementById('levelcard').src = `https://vacefron.nl/api/rankcard?username={levelTag}&avatar={userAv}&level={level}&rank=&currentxp={thisLevelXp}&nextlevelxp=1000&previouslevelxp=0&custombg=${bs}image{bl}&xpcolor=${bs}xpcolor{bl}&isboosting=false`
+	{bl}
+
+
+		async function xpcolor() {bs}
+	let xpcolor = document.getElementById("xp").value.replace('#', '')
+	let bgcolor = document.getElementById("bg").value.replace('#', '')
+    let image = document.getElementById('image').value
+    let bg = null
+    if(image.length < 1) {bs}
+    bg = bgcolor
+    {bl} else {bs}
+    bg = image
+    {bl}
+document.getElementById('levelcard').src = `https://vacefron.nl/api/rankcard?username={levelTag}&avatar={userAv}&level={level}&rank=&currentxp={thisLevelXp}&nextlevelxp=1000&previouslevelxp=0&custombg=${bs}bg{bl}&xpcolor=${bs}xpcolor{bl}&isboosting=false`
+	{bl}
+async function grid() {bs}
+document.getElementById('guildgrid').style.gridTemplateColumns == '300px 300px'
+{bl}
+
+
+	    async function show(a, b) {bs}
+		let list = document.getElementsByName("lists")
+        let btns = document.getElementsByName("btnlist")
+		list.forEach(disable)
+        btns.forEach(normal)
+		function disable(x) {bs}
+		x.style.display = 'none'
+		{bl}
+
+        function normal(y) {bs}
+        y.style.background = '#464646'
+        {bl}
+		document.getElementById(a).style.display = 'block'
+        document.getElementById(b).style.background = '#ff4085'
+	    {bl}
+    </script>

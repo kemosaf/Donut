@@ -1,0 +1,320 @@
+
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <style>
+
+
+html,body{margin:0;font-family:roboto,sans-serif;color:#fff}html{background-color:#2c2f33; background-repeat:repeat;animation:none}
+
+.wave-container {
+  background: #2c2f33;
+}
+.wave-container > svg {
+  display: block;
+}
+.wave-container {
+  position: relative;
+  background: #2c2f33;
+  color: #2c2f33;
+  text-align: center;
+  overflow: hidden;
+}
+@keyframes animateWave {
+  0% {
+    transform: scale(1,0);
+  }
+  100% {
+    transform: scale(1,1);
+  }
+}
+.wave-container > svg {
+  display: block;
+  transform-origin: top;
+  animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+.chart-skills {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.chart-skills *,
+.chart-skills::before {
+  box-sizing: border-box;
+}
+
+
+.chart-skills {
+  position: relative;
+  width: 350px;
+  height: 175px;
+  overflow: hidden;
+}
+
+.chart-skills::before,
+.chart-skills::after {
+  position: absolute;
+}
+
+.chart-skills::before {
+  content: '';
+  width: inherit;
+  height: inherit;
+  border-bottom: none;
+  border-top-left-radius: 175px;
+  border-top-right-radius: 175px;
+}
+
+
+
+.chart-skills li {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border: 45px solid;
+  border-top: none;
+  border-bottom-left-radius: 175px;
+  border-bottom-right-radius: 175px;
+  transform-origin: 50% 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  animation-fill-mode: forwards;
+  animation-duration: .4s;
+  animation-timing-function: linear;
+}
+
+.chart-skills li:nth-child(1) {
+  z-index: 4;
+  border-color: green;
+  animation-name: rotate-one;
+}
+
+.chart-skills li:nth-child(2) {
+  z-index: 3;
+  border-color: firebrick;
+  animation-name: rotate-two;
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(3) {
+  z-index: 2;
+  border-color: steelblue;
+  animation-name: rotate-three;
+  animation-delay: .8s;
+}
+
+.chart-skills li:nth-child(4) {
+  z-index: 1;
+  border-color: orange;
+  animation-name: rotate-four;
+  animation-delay: 1.2s;
+}
+
+.chart-skills span {
+  position: absolute;
+  font-size: .85rem;
+  backface-visibility: hidden;
+  animation: fade-in .4s linear forwards;
+}
+
+.chart-skills li:nth-child(1) span {
+  top: 5px;
+  left: 10px;
+  transform: rotate(-21.6deg);
+}
+
+.chart-skills li:nth-child(2) span {
+  top: 20px;
+  left: 10px;
+  transform: rotate(-79.2deg);
+  animation-delay: .4s;
+}
+
+.chart-skills li:nth-child(3) span {
+  top: 18px;
+  left: 10px;
+  transform: rotate(-140.4deg);
+  animation-delay: .8s;
+}
+
+.chart-skills li:nth-child(4) span {
+  top: 10px;
+  left: 10px;
+  transform: rotate(-180deg);
+  animation-delay: 1.2s;
+}
+
+
+@keyframes rotate-one {
+  100% {
+    transform: rotate(21.6deg);
+ 
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotate(21.6deg);
+  }
+  100% {
+    transform: rotate(79.2deg);
+
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    transform: rotate(79.2deg);
+  }
+  100% {
+    transform: rotate(140.4deg);
+
+  }
+}
+
+@keyframes rotate-four {
+  0% {
+    transform: rotate(140.4deg);
+  }
+  100% {
+    transform: rotate(180deg);
+
+  }
+}
+
+@keyframes fade-in {
+  0%,
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+ul {
+  margin-top: 50px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  align-content: center;
+}
+
+li {
+margin-top: 10px;
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.active {
+  border-radius: 10px;
+  background-color: #7289DA;
+}
+
+ .header {
+                padding: 80px;
+                text-allign: center;
+                background:#23272a;
+                color: white;
+        }
+
+        .grid1 {
+                padding: 100px;
+                text-allign: center;
+                background: #36393f;
+                color: white;
+        }
+
+.button {
+  background-color: #ff4085; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+        
+	    </style>
+  </head>
+  <body>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#commands">Commands</a></li>
+  <li><a href="/dashboard">Dashboard</a></li>
+  <li><a href="#support">Support</a></li>
+  <li><a href="#about">About</a></li>
+
+</ul>
+
+<br>
+<div class='header'>
+	<ul style='float:right;' class="chart-skills">
+  <li>
+    <span><p font-family:sans-serif>CSS</p></span>
+  </li>
+  <li>
+    <span><p font-family:sans-serif>HTML</p></span>
+  </li>
+  <li>
+    <span><p font-family:sans-serif>Python</p></span>
+  </li>
+  <li>
+    <span><p font-family:sans-serif>JavaScript</p></span>
+  </li>
+</ul>
+<br>
+<center>
+<h1 style='font-family:sans-serif;'>
+<img src="https://media.discordapp.net/attachments/758726391495000104/779145290347184148/97d72f9647dbe3ed61c585d7ce9947bf.png" alt="discordLogo" style="float: left;width:250px;margin-left:15px;">Enhance Your Discord Server!</h1>
+
+<p style='font-family:sans-serif;'> With advanced astonoshing features that are combined in an All-In-One Bot!</p>
+<br><br>
+<a href='https://discord.com/api/oauth2/authorize?client_id=734526487994171392&permissions=8&scope=bot'><button class='button'>Add Donut to Your Server!</button></a>
+	</center>
+
+</div>
+<div class="wave-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#23272a" fill-opacity="1" d="M0,96L16,128C32,160,64,224,96,234.7C128,245,160,203,192,181.3C224,160,256,160,288,154.7C320,149,352,139,384,122.7C416,107,448,85,480,90.7C512,96,544,128,576,160C608,192,640,224,672,213.3C704,203,736,149,768,160C800,171,832,245,864,266.7C896,288,928,256,960,208C992,160,1024,96,1056,80C1088,64,1120,96,1152,101.3C1184,107,1216,85,1248,96C1280,107,1312,149,1344,154.7C1376,160,1408,128,1424,112L1440,96L1440,0L1424,0C1408,0,1376,0,1344,0C1312,0,1280,0,1248,0C1216,0,1184,0,1152,0C1120,0,1088,0,1056,0C1024,0,992,0,960,0C928,0,896,0,864,0C832,0,800,0,768,0C736,0,704,0,672,0C640,0,608,0,576,0C544,0,512,0,480,0C448,0,416,0,384,0C352,0,320,0,288,0C256,0,224,0,192,0C160,0,128,0,96,0C64,0,32,0,16,0L0,0Z"></path></svg>
+</div>
+<div class='grid1'>
+
+
+
+<h1 style='font-family:sans-serif;'><img src="https://media.discordapp.net/attachments/758726391495000104/776721330593595392/unknown.png" alt="ecoPic" style="float: right;width:500px;margin-left:15px;">
+
+<h1 style='font-family:sans-serif;'>Fun Economy System!</h1>
+
+<p style='font-family:sans-serif;'> Donut includes a fun, simple, astonoshing economy system which is fun to use with friends and compete! The economy system is secure and well developed, the system is currently still quite small, more features are planned like shop commands, etc.</p>
+<br><br>
+
+
+	</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#242020" fill-opacity="1" d="M0,96L21.8,128C43.6,160,87,224,131,234.7C174.5,245,218,203,262,176C305.5,149,349,139,393,128C436.4,117,480,107,524,128C567.3,149,611,203,655,202.7C698.2,203,742,149,785,144C829.1,139,873,181,916,202.7C960,224,1004,224,1047,229.3C1090.9,235,1135,245,1178,256C1221.8,267,1265,277,1309,277.3C1352.7,277,1396,267,1418,261.3L1440,256L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"></path></svg>
+
+    <script src="script.js"></script>
+  </body>
+</html>

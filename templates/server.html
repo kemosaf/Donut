@@ -1,0 +1,344 @@
+
+	<!DOCTYPE html>
+<html>
+<head>
+
+        <link rel="icon" href="https://media.discordapp.net/attachments/758726391495000104/779145290347184148/97d72f9647dbe3ed61c585d7ce9947bf.png">
+<title>Donut</title>
+
+<meta property="og:type" content="website">
+<meta name="author" content="An advanced, multi-purpose, all-in-one, modern Discord bot!">
+<meta name="theme-color" content="#ff4085">
+<meta property="og:title" content="Donut" />
+<meta property="og:description" content="An advanced, multi-purpose, all-in-one, modern Discord bot!" />
+<meta property="og:image" content="https://media.discordapp.net/attachments/758726391495000104/779145290347184148/97d72f9647dbe3ed61c585d7ce9947bf.png" />
+    
+<style>
+{style}
+</style>
+</head>
+<body>
+
+<body onload='disable()'>
+
+<div style='background-color:{defaultColor};border-bottom: 3px solid white;' class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+            <a style='color: white; text-decoration: none;' href='/'>
+      <b>Donut</b>
+<img width=30; src='https://media.discordapp.net/attachments/758726391495000104/779145290347184148/97d72f9647dbe3ed61c585d7ce9947bf.png' style='position: absolute; margin-left:10px'></img>
+</a>
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+{nav}
+  </div>
+</div>
+
+<div id="success" style="position: fixed; display: none; background-color: green; margin: 20px; width: 140px; height: 60px; border-radius: 10px; text-align: center; bottom: 0px; right: 0px;">
+
+<p style="font-size:20px"><b>Success! ✔</b></p>
+
+        </div>
+<div id="error" style="position: fixed; display: none; background-color: red; margin: 20px; width: 410px; height: 60px; border-radius: 10px; text-align: center; bottom: 0px; right: 0px;">
+
+<p style="font-size:20px"><b>Uh oh, an error has occured! ✖</b></p>
+
+        </div>
+
+
+<div class='header'>
+	
+<br>
+<p style='font-family:sans-serif; font-size: 40px'>
+<img width=200 style='float:left; margin-right:50px;' src='{serverAv}'></img> 
+<a href='/{redirect}#token_type=Bearer&access_token={token}&expires_in=604800&scope=identify+guilds'><button class='button' style="background-color:{defaultColor};float:right; margin-right: 20px">Switch Server</button></a><b>{guildObj}</b></p><p>Server ID: {guildObj.id}<br>Owner: {guildObj.owner}<br>Members: {lenguildObjmembers}<br>Creation Date: {guildBirthday}</p>
+
+<br><br>
+</div>
+<div class='grid1'>
+
+	
+
+
+	    <br>
+
+	    <br><br>
+
+    <div style='card:hover{bs}{bl}' class="card">
+	    
+	    
+	     
+<form>
+	      <br><p style='margin-top:5px;font-size:20px'><b><u>Server Prefix</u></b></p><p> 
+
+    <input type="text" name="prefix" id = "prefix" value="{prefix}"><br>
+
+    <p>Make sure your prefix doesn't contain any spaces and isn't an empty field!</p>
+
+    <br>
+    <input class='button' style='background-color:{defaultColor};width:100%' type="button" value="Set Prefix" id = "submit"
+           onClick = "setPrefix()">
+
+</form>    
+	    </div>  
+
+<br><br><br>
+	    
+
+
+            
+    <div class="card">
+	    
+	    
+	     
+<form>
+	      <br><p style='margin-top:5px;font-size:20px'><b><u>Default Color:</u></b></p><p> 
+
+    <input type="color" name="color" id = "color" value="{defaultColor}"><br>
+
+    <p>This setting changes the default color of embeded messages sent, it will also set the main color of the dashboard! It's set to pink (#ff4085) by default!</p>
+
+    <br>
+    <input class='button' style='background-color:{defaultColor};width:100%' type="button" value="Set Color" id = "submit"
+           onClick = "setColor()">
+
+</form>    
+	    </div>  
+
+<br><br><br>
+	    
+
+
+    <div class="card">
+	    
+	    
+	     
+<form>
+	      <br><p style='margin-top:5px;font-size:20px'><b><u>User Greeting</u></b></p><p> 
+    <p>Greetings Channel:</p>
+    <select id="joinChannels" name="channels">
+<option value="{joinID}">#{joinChannel}</option>
+<option value="None">None</option>
+{channels}
+    </select>
+
+    <p>Greeting Message:</p>
+<input type="text" name="joinMessage" id = "joinMessage" value='{joinMessage}' placeholder='Hello {bs}user{bl}!' value=""><br>
+<p style='font-size:15px'>Use {bs}user{bl} for the user's name. <br> To disable the feature set the Greeting Channel to None.</p>
+    <br>
+    <input class='button' style='background-color:{defaultColor};width:100%' type="button" value="Set User Greeting Settings" id = "submit"
+           onClick = "setWelcome()">
+
+</form>    
+	    </div>  
+
+
+	    
+<br><br><br>
+	    
+    <div class="card">
+	    
+	    
+	     
+<form>
+	      <br><p style='margin-top:5px;font-size:20px'><b><u>User Leaves</u></b></p><p> 
+    <p>Leaves Channel:</p>
+    <select id="leaveChannels" name="channels">
+<option value="{leaveID}">#{leaveChannel}</option>
+<option value="None">None</option>
+{channels}
+    </select>
+
+    <p>Leave Message:</p>
+<input type="text" name="leaveMessage" id = "leaveMessage" value='{leaveMessage}' placeholder='Bye {bs}user{bl}!' value=""><br>
+<p style='font-size:15px'>Use {bs}user{bl} for the user's name. <br> To disable the feature set the Leaves Channel to None.</p>
+    <br>
+    <input class='button' style='background-color:{defaultColor};width:100%' type="button" value="Set User Leaves Settings" id = "submit"
+           onClick = "setLeave()">
+
+</form>    
+	    </div>  
+
+<br><br><br>
+	    
+    <div class="card">
+	    
+	    
+	     
+<form>
+	      <br><p style='margin-top:5px;font-size:20px'><b><u>Edited/Deleted Messages</u></b></p><p> 
+    <p>Deleted Messages Logging Channel:</p>
+    <select id="deletedChannels" name="channels">
+<option value="{deleteID}">#{deleteChannel}</option>
+<option value="None">None</option>
+{channels}
+    </select>
+
+        <p>Edited Messages Logging Channel:</p>
+    <select id="editedChannels" name="channels">
+<option value="{editID}">#{editChannel}</option>
+<option value="None">None</option>
+{channels}
+    </select>
+<p style='font-size:15px'>To disable the feature set the channel to None.</p>
+    <br>
+    <input class='button' style='background-color:{defaultColor};width:100%' type="button" value="Set Deleted/Edited Messages Settings" id = "submit"
+           onClick = "setDeletedEdited()">
+
+</form>    
+	    </div>  
+
+<br><br><br>
+	    	    
+    <div class="card">
+	    
+	    
+	     
+<form>
+	      <br><p style='margin-top:5px;font-size:20px'><b><u>Economy Currency:</u></b></p><p> 
+    <input type="text" name="currency" id = "currency" value="{currency}"><br>
+<p style='font-size:15px'>The currency is set to 'coins' by default!</p>
+    <br>
+    <input class='button' style='background-color:{defaultColor};width:100%' type="button" value="Set Economy Currency" id = "submit"
+           onClick = "setCurrency()">
+
+</form>    
+	    </div>  
+
+
+
+
+
+
+</div>
+	    
+</div>
+
+	</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#23272a" fill-opacity="1" d="M0,64L18.5,80C36.9,96,74,128,111,122.7C147.7,117,185,75,222,74.7C258.5,75,295,117,332,154.7C369.2,192,406,224,443,229.3C480,235,517,213,554,213.3C590.8,213,628,235,665,240C701.5,245,738,235,775,234.7C812.3,235,849,245,886,224C923.1,203,960,149,997,112C1033.8,75,1071,53,1108,58.7C1144.6,64,1182,96,1218,138.7C1255.4,181,1292,235,1329,256C1366.2,277,1403,267,1422,261.3L1440,256L1440,320L1421.5,320C1403.1,320,1366,320,1329,320C1292.3,320,1255,320,1218,320C1181.5,320,1145,320,1108,320C1070.8,320,1034,320,997,320C960,320,923,320,886,320C849.2,320,812,320,775,320C738.5,320,702,320,665,320C627.7,320,591,320,554,320C516.9,320,480,320,443,320C406.2,320,369,320,332,320C295.4,320,258,320,222,320C184.6,320,148,320,111,320C73.8,320,37,320,18,320L0,320Z"></path></svg>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+<script>
+
+function disable()
+{bs}
+ document.onkeydown = function (evt) 
+{bs}
+var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+  if (keyCode !== 13) return;
+  return false;
+ {bl} 
+{bl}
+
+function noenter() {bs}
+  return !(window.event && window.event.keyCode == 13);
+{bl}
+
+
+async function setPrefix() {bs}
+	let p = document.getElementById("prefix").value
+	splitPrefix = p.split(" ")
+	if(splitPrefix[1]) {bs}
+
+ document.getElementById("error").style.display = "block";
+setTimeout(function(){bs}document.getElementById("error").style.display = "none"; {bl}, 2000);
+return
+	{bl}
+	if(!splitPrefix[0]) {bs}
+
+ document.getElementById("error").style.display = "block";
+setTimeout(function(){bs}document.getElementById("error").style.display = "none"; {bl}, 2000);
+return
+	{bl}
+	fetch(`/server?server={server}&user={user}&code={code}&key=prefix&value=${bs}p{bl}`)
+ document.getElementById("success").style.display = "block";
+setTimeout(function(){bs}document.getElementById("success").style.display = "none"; {bl}, 2000);
+{bl}
+
+
+
+
+async function setColor() {bs}
+	let color = document.getElementById("color").value
+	color = color.replace('#', '0x')
+        console.log(color)
+	fetch(`/server?server={server}&user={user}&code={code}&key=color&value=${bs}color{bl}`)
+ document.getElementById("success").style.display = "block";
+setTimeout(function(){bs}document.location.reload(true); {bl}, 500);
+
+{bl}
+
+
+async function setWelcome() {bs}
+	let channel = document.getElementById("joinChannels").value
+	let message = document.getElementById("joinMessage").value
+	if(message.length < 1) {bs}
+ document.getElementById("error").style.display = "block";
+setTimeout(function(){bs}document.getElementById("error").style.display = "none"; {bl}, 2000);
+return
+	{bl}
+	
+	fetch(`/server?server={server}&user={user}&code={code}&key=joinChannel&value=${bs}channel{bl}`)
+	fetch(`/server?server={server}&user={user}&code={code}&key=joinMessage&value=${bs}message{bl}`)
+ document.getElementById("success").style.display = "block";
+setTimeout(function(){bs}document.getElementById("success").style.display = "none"; {bl}, 2000);
+{bl}
+
+async function setLeave() {bs}
+	let channel = document.getElementById("leaveChannels").value
+	let message = document.getElementById("leaveMessage").value
+	if(message.length < 1) {bs}
+ document.getElementById("error").style.display = "block";
+setTimeout(function(){bs}document.getElementById("error").style.display = "none"; {bl}, 2000);
+return
+	{bl}
+	
+	fetch(`/server?server={server}&user={user}&code={code}&key=leaveChannel&value=${bs}channel{bl}`)
+	fetch(`/server?server={server}&user={user}&code={code}&key=leaveMessage&value=${bs}message{bl}`)
+ document.getElementById("success").style.display = "block";
+setTimeout(function(){bs}document.getElementById("success").style.display = "none"; {bl}, 2000);
+{bl}
+
+
+async function setDeletedEdited() {bs}
+	let deleted = document.getElementById("deletedChannels").value
+	let edited = document.getElementById("editedChannels").value
+	
+	fetch(`/server?server={server}&user={user}&code={code}&key=deleteChannel&value=${bs}deleted{bl}`)
+	fetch(`/server?server={server}&user={user}&code={code}&key=editChannel&value=${bs}edited{bl}`)
+ document.getElementById("success").style.display = "block";
+setTimeout(function(){bs}document.getElementById("success").style.display = "none"; {bl}, 2000);
+{bl}
+
+
+async function setCurrency() {bs}
+	let currency = document.getElementById("currency").value
+	if(currency.length < 1) {bs}
+ document.getElementById("error").style.display = "block";
+setTimeout(function(){bs}document.getElementById("error").style.display = "none"; {bl}, 2000);
+return
+	{bl}
+	fetch(`/server?server={server}&user={user}&code={code}&key=currency&value=${bs}currency{bl}`)
+ document.getElementById("success").style.display = "block";
+setTimeout(function(){bs}document.location.reload(true); {bl}, 1000);
+{bl}
+
+
+</script>
